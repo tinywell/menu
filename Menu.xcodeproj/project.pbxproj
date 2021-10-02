@@ -13,6 +13,13 @@
 		A52C010E27073924000C3964 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52C010D27073924000C3964 /* Preview Assets.xcassets */; };
 		A52C011927073925000C3964 /* MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C011827073925000C3964 /* MenuTests.swift */; };
 		A52C012427073925000C3964 /* MenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C012327073925000C3964 /* MenuUITests.swift */; };
+		A52C013227073959000C3964 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C013127073959000C3964 /* MenuModel.swift */; };
+		A52C0134270739E0000C3964 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C0133270739E0000C3964 /* ImagePicker.swift */; };
+		A52C0136270739EB000C3964 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C0135270739EB000C3964 /* Helper.swift */; };
+		A52C013827073A2C000C3964 /* menus.json in Resources */ = {isa = PBXBuildFile; fileRef = A52C013727073A2C000C3964 /* menus.json */; };
+		A52C014027073C24000C3964 /* AddMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C013F27073C24000C3964 /* AddMenuView.swift */; };
+		A52C0144270842E5000C3964 /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C0143270842E5000C3964 /* MenuCardView.swift */; };
+		A52C0146270859F4000C3964 /* MenuScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C0145270859F4000C3964 /* MenuScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,13 @@
 		A52C011F27073925000C3964 /* MenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52C012327073925000C3964 /* MenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUITests.swift; sourceTree = "<group>"; };
 		A52C012527073925000C3964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A52C013127073959000C3964 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		A52C0133270739E0000C3964 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A52C0135270739EB000C3964 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		A52C013727073A2C000C3964 /* menus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menus.json; sourceTree = "<group>"; };
+		A52C013F27073C24000C3964 /* AddMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuView.swift; sourceTree = "<group>"; };
+		A52C0143270842E5000C3964 /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
+		A52C0145270859F4000C3964 /* MenuScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +109,15 @@
 		A52C010527073922000C3964 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				A52C013727073A2C000C3964 /* menus.json */,
+				A52C013127073959000C3964 /* MenuModel.swift */,
 				A52C010627073922000C3964 /* MenuApp.swift */,
 				A52C010827073922000C3964 /* ContentView.swift */,
+				A52C0145270859F4000C3964 /* MenuScrollView.swift */,
+				A52C0143270842E5000C3964 /* MenuCardView.swift */,
+				A52C013F27073C24000C3964 /* AddMenuView.swift */,
+				A52C0135270739EB000C3964 /* Helper.swift */,
+				A52C0133270739E0000C3964 /* ImagePicker.swift */,
 				A52C010A27073924000C3964 /* Assets.xcassets */,
 				A52C010F27073924000C3964 /* Info.plist */,
 				A52C010C27073924000C3964 /* Preview Content */,
@@ -233,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52C013827073A2C000C3964 /* menus.json in Resources */,
 				A52C010E27073924000C3964 /* Preview Assets.xcassets in Resources */,
 				A52C010B27073924000C3964 /* Assets.xcassets in Resources */,
 			);
@@ -259,8 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52C0144270842E5000C3964 /* MenuCardView.swift in Sources */,
+				A52C0146270859F4000C3964 /* MenuScrollView.swift in Sources */,
 				A52C010927073922000C3964 /* ContentView.swift in Sources */,
+				A52C014027073C24000C3964 /* AddMenuView.swift in Sources */,
+				A52C0134270739E0000C3964 /* ImagePicker.swift in Sources */,
+				A52C0136270739EB000C3964 /* Helper.swift in Sources */,
 				A52C010727073922000C3964 /* MenuApp.swift in Sources */,
+				A52C013227073959000C3964 /* MenuModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Menu/Preview Content\"";
+				DEVELOPMENT_TEAM = HV972PZ8C9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Menu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,6 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Menu/Preview Content\"";
+				DEVELOPMENT_TEAM = HV972PZ8C9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Menu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

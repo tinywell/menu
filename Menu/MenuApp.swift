@@ -11,7 +11,7 @@ import SwiftUI
 struct MenuApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(AppData(menus: Helper.getMenus()))
         }
     }
 }

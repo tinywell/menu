@@ -1,0 +1,29 @@
+[{
+    "id":1,
+    "name":"干锅土豆片",
+    "imageName":"WechatIMG79",
+    "addr":"street 1",
+    "detail":"这家的干锅土豆片特别好吃\n不过有点🌶",
+    "score":5
+},{
+    "id":2,
+    "name":"清炒生菜",
+    "imageName":"WechatIMG80",
+    "addr":"street 2",
+    "detail":"",
+    "score":4.5
+},{
+    "id":3,
+    "name":"白切鸡",
+    "imageName":"WechatIMG81",
+    "addr":"street 2",
+    "detail":"",
+    "score":5
+},{
+    "id":4,
+    "name":"糖醋里脊",
+    "imageName":"WechatIMG82",
+    "addr":"street 2",
+    "detail":"",
+    "score":4.5
+}]
