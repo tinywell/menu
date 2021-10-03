@@ -27,21 +27,21 @@ struct MenuScrollView: View {
         let currentOffset = CGFloat(currentIndex) * (menuWidth + spacing)-spacing
         
         GeometryReader(content: { geometry in
-            
             HStack(spacing:spacing){
                 ForEach(appData.menus){menu in
-                    // ForEach(0..<appData.menus.count){_ in
-                    HStack{
-                        MenuCardView(menu: menu).environmentObject(appData)
-                    }
-                    .offset(x: dragOffset - currentOffset)
-                    .gesture(dragGesture)
-                    .animation(.spring())
-                    .onChange(of: currentIndex, perform: { value in
-                        currentIndex = max(min(currentIndex, appData.menus.count - 1), 0)
-                    })
+                    MenuCardView(menu: menu).environmentObject(appData)
                 }
-            }
+            }.offset(x: dragOffset - currentOffset)
+            .gesture(dragGesture)
+            .animation(.spring())
+            .onChange(of: currentIndex, perform: { value in
+                print("onChange currentIndex:",currentIndex)
+                //                currentIndex = max(min(currentIndex, appData.menus.count - 1), 0)
+            })
+            .onChange(of: appData.menus.count, perform: { value in
+                print("onChange menus.count:",appData.menus.count)
+                currentIndex = max(min(currentIndex, appData.menus.count - 1), 0)
+            })
         })
         
     }

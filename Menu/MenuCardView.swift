@@ -48,8 +48,8 @@ struct MenuCardView: View {
         }
         .alert(isPresented: $showConfirm) {
             Alert(
-                title: Text("此操作不可撤回"),
-                message: Text("确定删除这个项目吗？"),
+                title: Text("删除"),
+                message: Text("此操作不可撤回,确定删除这个项目吗？"),
                 primaryButton: .default(
                     Text("取消"),
                     action: {print("取消",menu.id,menu.name)}
