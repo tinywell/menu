@@ -1,5 +1,5 @@
 //
-//  TestScrollView.swift
+//  MenuScrollView.swift
 //  Menu
 //
 //  Created by tinywell on 2021/10/02.
@@ -27,57 +27,23 @@ struct MenuScrollView: View {
         let currentOffset = CGFloat(currentIndex) * (menuWidth + spacing)-spacing
         
         GeometryReader(content: { geometry in
-            //        ScrollView(.horizontal, showsIndicators: false, content: {
             
             HStack(spacing:spacing){
                 ForEach(appData.menus){menu in
-                    //                ForEach(0..<appData.menus.count){_ in
+                    // ForEach(0..<appData.menus.count){_ in
                     HStack{
-                        MenuCardView(menu: menu)
-                            //                        MenuCardView(menu: appData.menus[$0])
-                            .onLongPressGesture {
-                                self.showConfirm=true
-                            }
-                            .alert(isPresented: $showConfirm) {
-                                Alert(
-                                    title: Text("此操作不可撤回"),
-                                    message: Text("确定删除这个项目吗？"),
-                                    primaryButton: .default(
-                                        Text("取消"),
-                                        action: {print("取消")}
-                                    ),
-                                    secondaryButton: .destructive(
-                                        Text("确定"),
-                                        action: {
-                                            print("删除")
-                                            self.appData.menus.removeAll { $0 == menu }
-                                            Helper.saveMenus(menus: self.appData.menus)
-                                        }
-                                    )
-                                )
-                            }
-                        
+                        MenuCardView(menu: menu).environmentObject(appData)
                     }
                     .offset(x: dragOffset - currentOffset)
                     .gesture(dragGesture)
-//                    .animation(isAnimation ?.spring():.none)
                     .animation(.spring())
-                    //                    .onChange(of: currentIndex, perform: { value in
-                    //                        isAnimation = true
-                    //                        /// 第一张的时候
-                    //                        if value == 0 {
-                    //                            isAnimation.toggle()
-                    //                            currentIndex = appData.menus.count - 2
-                    //                            /// 最后一张的时候currentIndex设置为1关闭动画
-                    //                        }else if value == appData.menus.count - 1 {
-                    //
-                    //                            isAnimation.toggle()
-                    //                            currentIndex = 1
-                    //                        }
-                    //                    })
+                    .onChange(of: currentIndex, perform: { value in
+                        currentIndex = max(min(currentIndex, appData.menus.count - 1), 0)
+                    })
                 }
             }
         })
+        
     }
 }
 
