@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct Helper {
+    static var MenuCardWidth:CGFloat = 350
+    static var MenuCardHeight:CGFloat = 263
+    
+    static var MenuCardMiniWidth:CGFloat = 333
+    static var MenuCardMiniHeight:CGFloat = 250
     
     static func saveMenus(menus: [MenuModel]) {
         let data = try! JSONEncoder().encode(menus)

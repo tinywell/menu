@@ -15,34 +15,53 @@ struct MenuCardView: View {
     public let height:CGFloat=263
     
     @State private var showConfirm=false
+    @State private var showDetail=false
     
     var body: some View {
-        ZStack{
-            VStack{
-                Image(uiImage: menu.image)
-                    .resizable()
-            }
-            VStack{
-                Spacer()
-                HStack{
-                    VStack{
-                        Text(menu.name)
-                            .font(.title)
-                            .bold()
-                            .foregroundColor(.white)
-                        Text(menu.addr)
-                            .font(.caption)
-                            .bold()
-                            .foregroundColor(.white)
-                        
-                    }
-                    .padding()
+        VStack{
+            ZStack{
+                VStack{
+                    Image(uiImage: menu.image)
+                        .resizable()
+                    
+                }
+                VStack{
                     Spacer()
-                }.background(Rectangle().opacity(0.5))
+                    HStack{
+                        VStack{
+                            Text(menu.name)
+                                .font(.title)
+                                .bold()
+                                .foregroundColor(.white)
+                            Text(menu.addr)
+                                .font(.caption)
+                                .bold()
+                                .foregroundColor(.white)
+                            
+                        }
+                        .padding()
+                        Spacer()
+                    }.background(Rectangle().opacity(0.5))
+                }
+            }.frame(width: width, height: height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            
+            if showDetail {
+                HStack{
+                    Text(menu.detail)
+                        .padding()
+                    Spacer()
+                }
             }
-        }.frame(width: width, height: height, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
-        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            
+        }.frame(width:width)
+//        .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+        .background(Color(white: 0.99))
+        .cornerRadius(15)
+        .shadow(color: .gray,radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+        .onTapGesture {
+            self.showDetail.toggle()
+        }
+        .animation(.easeInOut)
         .onLongPressGesture {
             self.showConfirm=true
         }
@@ -63,7 +82,7 @@ struct MenuCardView: View {
                     }
                 )
             )
-        }    
+        }
     }
 }
 

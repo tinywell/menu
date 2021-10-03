@@ -12,13 +12,27 @@ struct ContentView: View {
     
     @State private var showAddMenu=false
     @State private var showConfirm=false
+    @State private var showRandom=false
     
     var body: some View {
         
         NavigationView{
             VStack{
                 MenuScrollView().environmentObject(appData)
+                
+                Button(action: {
+                    showRandom=true
+                }){
+                    Image(systemName: "circle.circle")
+                        .resizable()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                .padding()
+//                .offset(y:-100)
             }
+            .sheet(isPresented: $showRandom, content: {
+                RandomMenuView().environmentObject(appData)
+            })
             .navigationBarItems(leading: HStack{
                 Text("我的私人菜单")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)

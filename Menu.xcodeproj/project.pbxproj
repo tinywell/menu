@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A51D3E8B27098D2800E1E934 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3E8A27098D2800E1E934 /* MenuDetailView.swift */; };
+		A51D3E8D2709FC2D00E1E934 /* RandomMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D3E8C2709FC2D00E1E934 /* RandomMenuView.swift */; };
 		A52C010727073922000C3964 /* MenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C010627073922000C3964 /* MenuApp.swift */; };
 		A52C010927073922000C3964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C010827073922000C3964 /* ContentView.swift */; };
 		A52C010B27073924000C3964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52C010A27073924000C3964 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		A51D3E8A27098D2800E1E934 /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
+		A51D3E8C2709FC2D00E1E934 /* RandomMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMenuView.swift; sourceTree = "<group>"; };
 		A52C010327073922000C3964 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52C010627073922000C3964 /* MenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuApp.swift; sourceTree = "<group>"; };
 		A52C010827073922000C3964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				A52C010627073922000C3964 /* MenuApp.swift */,
 				A52C010827073922000C3964 /* ContentView.swift */,
 				A52C0145270859F4000C3964 /* MenuScrollView.swift */,
+				A51D3E8C2709FC2D00E1E934 /* RandomMenuView.swift */,
 				A52C0143270842E5000C3964 /* MenuCardView.swift */,
 				A51D3E8A27098D2800E1E934 /* MenuDetailView.swift */,
 				A52C013F27073C24000C3964 /* AddMenuView.swift */,
@@ -292,6 +295,7 @@
 				A52C0134270739E0000C3964 /* ImagePicker.swift in Sources */,
 				A52C0136270739EB000C3964 /* Helper.swift in Sources */,
 				A52C010727073922000C3964 /* MenuApp.swift in Sources */,
+				A51D3E8D2709FC2D00E1E934 /* RandomMenuView.swift in Sources */,
 				A52C013227073959000C3964 /* MenuModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
