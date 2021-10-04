@@ -12,8 +12,8 @@ struct Helper {
     static var MenuCardWidth:CGFloat = 350
     static var MenuCardHeight:CGFloat = 263
     
-    static var MenuCardMiniWidth:CGFloat = 333
-    static var MenuCardMiniHeight:CGFloat = 250
+    static var MenuCardMiniWidth:CGFloat = 266
+    static var MenuCardMiniHeight:CGFloat = 200
     
     static func saveMenus(menus: [MenuModel]) {
         let data = try! JSONEncoder().encode(menus)
