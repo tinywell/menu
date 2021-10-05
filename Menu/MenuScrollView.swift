@@ -16,7 +16,7 @@ struct MenuScrollView: View {
     /// 当前显示的位置索引,
     /// 这是实际数据中的1就是数据没有被处理之前的0位置的图片
     /// 所以这里默认从1开始
-    @State var currentIndex: Int = 0
+    @Binding var currentIndex: Int
     
     @State var isAnimation: Bool = true
     
@@ -76,7 +76,8 @@ extension MenuScrollView{
 }
 
 struct TestScrollView_Previews: PreviewProvider {
+    @State static var currentIndex = 0
     static var previews: some View {
-        MenuScrollView().environmentObject(AppData(menus: Helper.getMenus()))
+        MenuScrollView(currentIndex: $currentIndex).environmentObject(AppData(menus: Helper.getMenus()))
     }
 }
