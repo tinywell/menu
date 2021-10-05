@@ -12,7 +12,7 @@ struct MenuModel:Hashable,Codable,Identifiable {
     var id=UUID()
     var name  :String = ""
     var addr  :String = ""
-    var score :Float  = 0
+    var score :Int  = 0
     var imageData :Data?
     var detail: String
     var imageName : String=""

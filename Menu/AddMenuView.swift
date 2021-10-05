@@ -11,7 +11,7 @@ struct AddMenuView: View {
     @State internal var name:String=""
     @State internal var addr:String=""
     @State internal var detail:String=""
-    @State internal var score:Float=0
+    @State internal var score:Int=0
     
     @State internal var showingImagePicker = false
     @State private var libraryImage: UIImage?
@@ -64,9 +64,9 @@ struct AddMenuView: View {
                 Section(header: Text("地址")){
                     TextField("输入地址",text:$addr)
                 }
-//                Section(header:Text("评分")){
-//
-//                }
+                Section(header:Text("评分")){
+                    RatingStarView(rating:$score,editAble: true)
+                }
                 
                 Section(header: Text("菜品备注")){
                     TextEditor(text: $detail)
@@ -89,6 +89,7 @@ struct AddMenuView: View {
             id: UUID(),
             name: name,
             addr: addr,
+            score: score,
             imageData: menuImage.jpegData(compressionQuality: 0.3) ?? Data(),
             detail: detail
             

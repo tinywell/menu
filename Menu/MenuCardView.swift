@@ -29,15 +29,20 @@ struct MenuCardView: View {
                     Spacer()
                     HStack{
                         VStack{
-                            Text(menu.name)
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(.white)
-                            Text(menu.addr)
-                                .font(.caption)
-                                .bold()
-                                .foregroundColor(.white)
-                            
+                            HStack{
+                                Text(menu.name)
+                                    .font(.title)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
+                            HStack{
+                                Text(menu.addr)
+                                    .font(.caption)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
                         }
                         .padding()
                         Spacer()
@@ -47,6 +52,10 @@ struct MenuCardView: View {
             
             if showDetail {
                 HStack{
+                    RatingStarView(rating: $menu.score)
+                    Spacer()
+                }
+                HStack{
                     Text(menu.detail)
                         .padding()
                     Spacer()
@@ -54,7 +63,7 @@ struct MenuCardView: View {
             }
             
         }.frame(width:width)
-//        .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+        //        .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
         .background(Color(white: 0.99))
         .cornerRadius(15)
         .shadow(color: .gray,radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
