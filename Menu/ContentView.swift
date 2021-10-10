@@ -24,7 +24,8 @@ struct ContentView: View {
                 Button(action: {
                     showRandom=true
                 }){
-                    Image(systemName: "circle.circle")
+//                    Image(systemName: "circle.circle")
+                    Image("eat")
                         .resizable()
                         .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
