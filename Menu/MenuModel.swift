@@ -14,7 +14,7 @@ struct MenuModel:Hashable,Codable,Identifiable {
     var addr  :String = ""
     var score :Int  = 0
     var imageData :Data?
-    var detail: String
+    var detail: String = ""
     var imageName : String=""
     
     var image: UIImage{

@@ -29,13 +29,13 @@ struct MenuScrollView: View {
         GeometryReader(content: { geometry in
             HStack(spacing:spacing){
                 ForEach(appData.menus){menu in
-                    MenuCardView(menu: menu).environmentObject(appData)
+                    MenuCardView(menu: menu,currentIndex:$currentIndex).environmentObject(appData)
                 }
             }.offset(x: dragOffset - currentOffset)
             .gesture(dragGesture)
             .animation(.spring())
             .onChange(of: currentIndex, perform: { value in
-                print("onChange currentIndex:",currentIndex)
+//                print("onChange currentIndex:",currentIndex)
                 //                currentIndex = max(min(currentIndex, appData.menus.count - 1), 0)
             })
             .onChange(of: appData.menus.count, perform: { value in

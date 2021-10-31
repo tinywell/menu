@@ -19,6 +19,7 @@ struct ContentView: View {
         
         NavigationView{
             VStack{
+                Spacer()
                 MenuScrollView(currentIndex: $currentIndex).environmentObject(appData)
                 
                 Button(action: {
@@ -47,7 +48,7 @@ struct ContentView: View {
                     Image(systemName: "plus.circle.fill")
                         .renderingMode(.original)
                 }.sheet(isPresented: $showAddMenu) {
-                    AddMenuView().environmentObject(self.appData)
+                    AddMenuView(menu:Binding.constant(MenuModel())).environmentObject(self.appData)
                 }
                 .padding()
             )

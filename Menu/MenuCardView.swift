@@ -11,11 +11,16 @@ struct MenuCardView: View {
     @EnvironmentObject var appData:AppData
     
     @State var menu:MenuModel
+    @Binding var currentIndex: Int
+    
     public let width:CGFloat=350
     public let height:CGFloat=263
     
     @State private var showConfirm=false
+    @State private var showAction=false
     @State private var showDetail=false
+    @State private var showEdit=false
+    
     
     var body: some View {
         VStack{
@@ -60,6 +65,13 @@ struct MenuCardView: View {
                         .padding()
                     Spacer()
                 }
+                HStack{
+                    Spacer()
+                    Button("修改",action:{self.showEdit=true})
+                        .padding()
+                        .font(.footnote)
+                }
+                
             }
             
         }.frame(width:width)
@@ -72,7 +84,26 @@ struct MenuCardView: View {
         }
         .animation(.easeInOut)
         .onLongPressGesture {
-            self.showConfirm=true
+            //            self.showConfirm=true
+            self.showConfirm = true
+        }
+        .onChange(of: currentIndex, perform: { value in
+//            print("currentIndex change: ",currentIndex)
+            self.showDetail=false
+        })
+        .sheet(isPresented: $showEdit){
+            AddMenuView(menu:$menu,isNew:false).environmentObject(self.appData)
+//            MenuDetailView(menu: menu)
+        }
+        .actionSheet(isPresented: $showAction) {
+            ActionSheet(title: Text("菜品编辑"),
+                        message: Text("选择菜品处理选项"),
+                        buttons: [
+                            .cancel(),
+                            .destructive(Text("删除菜品"),action: {self.showConfirm=true}),
+                            .default(Text("修改菜品"),action: {})
+                        ]
+            )
         }
         .alert(isPresented: $showConfirm) {
             Alert(
@@ -96,7 +127,8 @@ struct MenuCardView: View {
 }
 
 struct MenuCardView_Previews: PreviewProvider {
+    @State static var currentIndex = 0
     static var previews: some View {
-        MenuCardView(menu:Helper.getMenus()[0])
+        MenuCardView(menu:Helper.getMenus()[0],currentIndex:$currentIndex)
     }
 }

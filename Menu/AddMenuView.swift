@@ -16,7 +16,8 @@ struct AddMenuView: View {
     @State internal var showingImagePicker = false
     @State private var libraryImage: UIImage?
     
-
+    @Binding var menu: MenuModel
+    var isNew = true
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appData: AppData
@@ -32,7 +33,7 @@ struct AddMenuView: View {
                     Text("取消")
                 }.padding()
                 Spacer()
-                Text("新增菜品")
+                Text(isNew ? "新增菜品":"编辑菜品")
                     .fontWeight(.heavy)
                 Spacer()
                 Button(action: {
@@ -75,8 +76,22 @@ struct AddMenuView: View {
                 
             }
         }
+        .onAppear(perform: {
+            self.initMenu()
+        })
     }
     
+    private func initMenu() {
+        if !isNew {
+            name = menu.name
+            libraryImage = menu.image
+            addr = menu.addr
+            score = menu.score
+            detail = menu.detail
+        }
+    }
+    
+
     
     private func saveRecipe() {
         
@@ -85,8 +100,7 @@ struct AddMenuView: View {
             menuImage = libImage
         }
         
-        let newMenu = MenuModel(
-            id: UUID(),
+        var newMenu = MenuModel(
             name: name,
             addr: addr,
             score: score,
@@ -94,9 +108,16 @@ struct AddMenuView: View {
             detail: detail
             
         )
+        if isNew {
+            newMenu.id = UUID()
+            appData.menus.append(newMenu)
+        }else {
+            newMenu.id = menu.id
+                appData.updateMenu(menu: newMenu)
+                menu=newMenu
+        }
         
         // Update Local Saved Data
-        appData.menus.append(newMenu)
         Helper.saveMenus(menus:  appData.menus)
         
     }
@@ -109,8 +130,9 @@ struct AddMenuView: View {
 
 struct AddMenuView_Previews: PreviewProvider {
     static var appData=AppData()
+    static var menu=MenuModel()
     
     static var previews: some View {
-        AddMenuView().environmentObject(appData)
+        AddMenuView(menu: Binding.constant(menu)).environmentObject(appData)
     }
 }
